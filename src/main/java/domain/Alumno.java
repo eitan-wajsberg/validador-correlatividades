@@ -1,17 +1,18 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Alumno {
     private String nombre;
     private String legajo;
-    private List<Materia> materiasAprobadas;
+    private Set<Materia> materiasAprobadas;
 
     public Alumno(String nombre, String legajo) {
         this.nombre = nombre;
         this.legajo = legajo;
-        this.materiasAprobadas = new ArrayList<>();
+        this.materiasAprobadas = new HashSet<>();
     }
 
     public String getNombre() {
@@ -30,12 +31,16 @@ public class Alumno {
         this.legajo = legajo;
     }
 
-    public List<Materia> getMateriasAprobadas() {
+    public Set<Materia> getMateriasAprobadas() {
         return materiasAprobadas;
     }
 
+    public void agregarMateriasAprobadas(Materia ...materias) {
+        Collections.addAll(this.materiasAprobadas, materias);
+    }
+
     public boolean puedeCursarMateria(Materia materia) {
-        //TODO
-        return true;
+        return this.materiasAprobadas.containsAll(materia.getCorrelativas())
+                && !this.materiasAprobadas.contains(materia);
     }
 }
