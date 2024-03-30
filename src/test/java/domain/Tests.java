@@ -13,7 +13,7 @@ public class Tests {
     Materia dds = new Materia("Diseño de Sistemas");
     Materia ssl = new Materia("Sintaxis y Semantica de los Lenguajes");
     Alumno martin = new Alumno("Martin Martinez", "208.124.0");
-    Inscripcion i = new Inscripcion(martin);
+    Inscripcion inscripcion = new Inscripcion(martin);
 
     @Before
     public void setup() {
@@ -41,14 +41,14 @@ public class Tests {
 
     @Test
     public void inscripcionNoValidaSiElAlumnoNoPuedeCursarTodasLasMaterias() {
-        i.agregarMaterias(dds, ads, ssl);
-        Assert.assertFalse(i.aprobada());
+        inscripcion.agregarMaterias(dds, ads, ssl);
+        Assert.assertFalse(inscripcion.aprobada());
     }
 
     @Test
     public void inscripcionValidaSiElAlumnoPuedeCursarTodasLasMaterias() {
         martin.agregarMateriasAprobadas(ayed, md, pdp, ads);
-        i.agregarMaterias(dds, ssl);
-        Assert.assertTrue(i.aprobada());
+        inscripcion.agregarMaterias(dds, ssl);
+        Assert.assertTrue(inscripcion.aprobada());
     }
 }
