@@ -25,7 +25,7 @@ Diagrama de Clases.
 módulo.
 
 ## Diagrama de clases
-![Diagrama de Clases - Validador de correlatividades drawio](https://github.com/eitan-wajsberg/validador-correlatividades/assets/129431498/156705cd-77c8-4357-a263-68a5a3c7b985)
+![Diagrama de Clases - Validador de correlatividades drawio](https://github.com/eitan-wajsberg/validador-correlatividades/assets/129431498/175d3bd9-9dfb-4303-bb3f-f104dc0c3b9d)
 
 - Una **materia** puede formar parte de 0 o mas **inscripciones**.
 - Una **inscripción** puede contener 1 o mas **materias**.
