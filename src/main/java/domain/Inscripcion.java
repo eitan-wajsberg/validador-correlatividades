@@ -1,14 +1,15 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Inscripcion {
-    private List<Materia> materias;
+    private Set<Materia> materias;
     private Alumno alumno;
 
     public Inscripcion(Alumno alumno) {
-        this.materias = new ArrayList<>();
+        this.materias = new HashSet<>();
         this.alumno = alumno;
     }
 
@@ -20,8 +21,13 @@ public class Inscripcion {
         this.alumno = alumno;
     }
 
+    public void agregarMaterias(Materia ...materias) {
+        Collections.addAll(this.materias, materias);
+    }
+
     public boolean aprobada() {
-        //TODO
-        return true;
+        return materias
+                .stream()
+                .allMatch(materia -> this.alumno.puedeCursarMateria(materia));
     }
 }
