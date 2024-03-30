@@ -1,15 +1,16 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Materia {
     private String nombre;
-    private List<Materia> correlativas;
+    public Set<Materia> correlativas;
 
     public Materia(String nombre) {
         this.nombre = nombre;
-        this.correlativas = new ArrayList<>();
+        this.correlativas = new HashSet<>();
     }
 
     public String getNombre() {
@@ -20,7 +21,11 @@ public class Materia {
         this.nombre = nombre;
     }
 
-    public List<Materia> getCorrelativas() {
+    public Set<Materia> getCorrelativas() {
         return correlativas;
+    }
+
+    public void agregarCorrelativas(Materia ...materias) {
+        Collections.addAll(this.correlativas, materias);
     }
 }
