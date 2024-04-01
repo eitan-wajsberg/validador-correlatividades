@@ -12,7 +12,7 @@ public class Tests {
     Materia ads = new Materia("Analisis de Sistemas");
     Materia dds = new Materia("Diseño de Sistemas");
     Materia ssl = new Materia("Sintaxis y Semantica de los Lenguajes");
-    Alumno martin = new Alumno("Martin Martinez", "208.124.0");
+    Alumno martin = new Alumno("Martin Martinez");
     Inscripcion inscripcion = new Inscripcion(martin);
 
     @Before

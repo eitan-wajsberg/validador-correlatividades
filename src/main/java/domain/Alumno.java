@@ -6,12 +6,10 @@ import java.util.Set;
 
 public class Alumno {
     private String nombre;
-    private String legajo;
     private Set<Materia> materiasAprobadas;
 
-    public Alumno(String nombre, String legajo) {
+    public Alumno(String nombre) {
         this.nombre = nombre;
-        this.legajo = legajo;
         this.materiasAprobadas = new HashSet<>();
     }
 
@@ -21,14 +19,6 @@ public class Alumno {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getLegajo() {
-        return legajo;
-    }
-
-    public void setLegajo(String legajo) {
-        this.legajo = legajo;
     }
 
     public Set<Materia> getMateriasAprobadas() {
